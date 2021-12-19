@@ -83,7 +83,7 @@ class MyDesignsFragment : Fragment() , MyDesignsRecyclerViewAdapter.EventListene
                             var city = jsonArray.getJSONObject(i).getString("City")
                             var style = jsonArray.getJSONObject(i).getString("Style")
                             var category = jsonArray.getJSONObject(i).getString("Category")
-                            var rating = jsonArray.getJSONObject(i).getInt("Rating")
+                           // var rating = jsonArray.getJSONObject(i).getInt("Rating")
 
                             // if (selectedCategory == "" || selectedCategory.equals(category, ignoreCase = true))
                             data.add(
@@ -93,7 +93,8 @@ class MyDesignsFragment : Fragment() , MyDesignsRecyclerViewAdapter.EventListene
                                     Style = style,
                                     Category = category,
                                     Liked = true,
-                                    Rating = rating
+                                    Rating = 0//rating
+
                                 )
                             )
                         }

@@ -6,12 +6,10 @@ import android.view.LayoutInflater
 import android.view.OrientationEventListener
 import android.view.View
 import android.view.ViewGroup
-import android.widget.CheckBox
-import android.widget.ImageView
-import android.widget.TextView
-import android.widget.Toast
+import android.widget.*
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import kotlinx.android.synthetic.main.event_row_layout.view.*
 import org.json.JSONException
 import pk.event.booking.app.EventDetailActivity
 import pk.event.booking.app.R
@@ -52,6 +50,7 @@ class MyDesignsRecyclerViewAdapter(private val mList: List<DesignViewModel> , li
         // sets the text to the textview from our itemHolder class
         holder.textView.text = "${designModel.Style + " " + designModel.Category} "
         holder.checkBox.isChecked = true
+        holder.rating.visibility = View.INVISIBLE
 
         holder.itemView.setOnClickListener {
 
@@ -83,6 +82,7 @@ class MyDesignsRecyclerViewAdapter(private val mList: List<DesignViewModel> , li
         val imageView: ImageView = itemView.findViewById(R.id.iv_event_main)
         val textView: TextView = itemView.findViewById(R.id.tv_event_name)
         val checkBox: CheckBox = itemView.findViewById(R.id.cb_like)
+        val rating: RatingBar = itemView.findViewById(R.id.rating)
     }
 
 
