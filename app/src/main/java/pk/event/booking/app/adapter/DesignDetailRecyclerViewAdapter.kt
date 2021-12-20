@@ -5,15 +5,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
-import android.widget.TextView
-import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
-import pk.event.booking.app.EventDetailActivity
+import com.bumptech.glide.Glide
+import pk.event.booking.app.DesignDetailActivity
 import pk.event.booking.app.R
 import pk.event.booking.app.data.DesignViewModel
-import pk.event.booking.app.data.DesignViewModelSample
 
-class EventDetailRecyclerViewAdapter(private val mList: List<DesignViewModelSample>) : RecyclerView.Adapter<EventDetailRecyclerViewAdapter.ViewHolder>() {
+class DesignDetailRecyclerViewAdapter(private val mList: List<DesignViewModel>) : RecyclerView.Adapter<DesignDetailRecyclerViewAdapter.ViewHolder>() {
 
 	// create new views
 	override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -28,25 +26,22 @@ class EventDetailRecyclerViewAdapter(private val mList: List<DesignViewModelSamp
 	// binds the list items to a view
 	override fun onBindViewHolder(holder: ViewHolder, position: Int) {
 
-		val ItemsViewModel = mList[position]
+		val designModel = mList[position]
 
-		holder.imageView.setImageResource(ItemsViewModel.Image)
+		Glide.with(holder.imageView.context).load(designModel.Image).into(holder.imageView)
 
+		holder.itemView.setOnClickListener {
 
+			val intent = Intent(
+				holder.imageView.context,
+				DesignDetailActivity::class.java
+			)
+			intent.putExtra("Image", designModel.Image)
+			intent.putExtra("Phone", designModel.City)
+			intent.putExtra("Title", designModel.Category + ":" + designModel.City)
 
-		/*holder.itemView.setOnClickListener(View.OnClickListener {
-				Toast.makeText(holder.imageView.context, "clicked", Toast.LENGTH_LONG).show()
-			})*/
-				//onItemClick?.invoke(contacts[adapterPosition])
-				/*holder.imageView.context.startActivity(
-					Intent(
-						holder.imageView.context,
-						EventDetailActivity::class.java
-					)
-				)*/
-
-
-
+			holder.imageView.context.startActivity(intent)
+		}
 
 	}
 

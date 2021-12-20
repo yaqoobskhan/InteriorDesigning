@@ -21,6 +21,7 @@ import pk.event.booking.app.adapter.DesignCategoryAdapter
 import pk.event.booking.app.adapter.HomeRecyclerViewAdapter
 import pk.event.booking.app.data.CategoryData
 import pk.event.booking.app.data.DesignViewModel
+import pk.event.booking.app.data.DesignViewModelSample
 import pk.event.booking.app.retrofit.ApiInterface
 import pk.event.booking.app.retrofit.SessionManager
 import pk.event.booking.app.utils.Utils
@@ -87,13 +88,37 @@ class DesignCategoryFragment : Fragment() {
                         var designData =
                             response.body().toString()
 
+                        val drawables = arrayOf(
+                            R.drawable.category,
+                            R.drawable.accesories,
+                            R.drawable.bedrooms,
+                            R.drawable.dining,
+                            R.drawable.living,
+                            R.drawable.image_six,
+                            R.drawable.image_two,
+                            R.drawable.category,
+                            R.drawable.accesories,
+                            R.drawable.bedrooms,
+                            R.drawable.dining,
+                            R.drawable.living,
+                            R.drawable.image_six,
+                            R.drawable.image_two,
+                            R.drawable.accesories,
+                            R.drawable.bedrooms,
+                            R.drawable.dining,
+                            R.drawable.living,
+                            R.drawable.image_six,
+                            R.drawable.image_two
+                        )
+
+
                         val jsonObject = JSONTokener(designData).nextValue() as JSONObject
                         val jArray = jsonObject.getJSONArray("msg")
 
                         val list = ArrayList<CategoryData>()
                         if (jArray != null) {
                             for (i in 0 until jArray.length()) {
-                                list.add(CategoryData(R.drawable.image_six, jArray.getString(i)))
+                                list.add(CategoryData(drawables[i], jArray.getString(i)))
                             }
                         }
 

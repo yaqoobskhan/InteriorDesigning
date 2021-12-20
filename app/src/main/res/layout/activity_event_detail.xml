@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".EventDetailActivity">
+    tools:context=".DesignDetailActivity">
 
 
     <ScrollView
@@ -19,15 +19,14 @@
             android:orientation="vertical">
 
 
-
             <TextView
                 android:id="@+id/tv_event_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text=""
-                android:textSize="20sp"
                 android:layout_margin="10dp"
-                android:textColor="@color/design_default_color_on_secondary"/>
+                android:text=""
+                android:textColor="@color/design_default_color_on_secondary"
+                android:textSize="20sp" />
 
 
             <androidx.cardview.widget.CardView
@@ -51,7 +50,6 @@
                     android:src="@drawable/image_six" />
 
 
-
             </androidx.cardview.widget.CardView>
 
 
@@ -60,37 +58,42 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
-                android:text="Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem IpsumLorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsumv"/>
+                android:text="Suggested Designs:"
+                android:textSize="18sp"
+                android:textStyle="bold" />
 
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recycler_event_detail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="8dp"
-                android:scrollbars="horizontal"
                 android:orientation="horizontal"
-                />
+                android:padding="8dp"
+                android:scrollbars="horizontal" />
+
+            <ProgressBar
+                android:id="@+id/progress_detail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal" />
 
             <Button
                 android:id="@+id/btn_call"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="40dp"
-                android:layout_marginEnd="40dp"
-                android:drawableLeft="@android:drawable/ic_menu_call"
-                android:background="@color/colorPrimaryDark"
-                android:textColor="@color/white"
-                android:paddingStart="120dp"
-                android:onClick="callButtonOnclick"
                 android:layout_marginTop="20dp"
+                android:layout_marginEnd="40dp"
+                android:background="@color/colorPrimaryDark"
+                android:drawableLeft="@android:drawable/ic_menu_call"
+                android:onClick="callButtonOnclick"
+                android:paddingStart="120dp"
                 android:paddingEnd="120dp"
-                android:textStyle="bold"
-                android:text="Call"/>
+                android:text="Call"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
 
         </LinearLayout>
-
-
 
 
     </ScrollView>

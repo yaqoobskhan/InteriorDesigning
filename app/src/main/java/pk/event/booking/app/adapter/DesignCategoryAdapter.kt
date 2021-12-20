@@ -10,8 +10,6 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
-import pk.event.booking.app.DrawerMainActivity
-import pk.event.booking.app.EventDetailActivity
 import pk.event.booking.app.HomeFragment
 import pk.event.booking.app.R
 import pk.event.booking.app.data.CategoryData

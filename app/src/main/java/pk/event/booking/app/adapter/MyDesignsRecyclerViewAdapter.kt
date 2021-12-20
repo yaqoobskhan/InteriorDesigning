@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.event_row_layout.view.*
 import org.json.JSONException
-import pk.event.booking.app.EventDetailActivity
+import pk.event.booking.app.DesignDetailActivity
 import pk.event.booking.app.R
 import pk.event.booking.app.data.DesignViewModel
 import pk.event.booking.app.data.ImageProperties
@@ -57,7 +57,7 @@ class MyDesignsRecyclerViewAdapter(private val mList: List<DesignViewModel> , li
             holder.imageView.context.startActivity(
                 Intent(
                     holder.imageView.context,
-                    EventDetailActivity::class.java
+                    DesignDetailActivity::class.java
                 )
             )
         }

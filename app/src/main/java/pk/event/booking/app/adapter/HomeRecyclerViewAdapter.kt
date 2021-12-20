@@ -10,7 +10,7 @@ import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import org.json.JSONException
-import pk.event.booking.app.EventDetailActivity
+import pk.event.booking.app.DesignDetailActivity
 import pk.event.booking.app.R
 import pk.event.booking.app.data.*
 import pk.event.booking.app.retrofit.ApiInterface
@@ -67,7 +67,7 @@ class HomeRecyclerViewAdapter(private val mList: List<DesignViewModel>) :
 
             val intent = Intent(
                 holder.imageView.context,
-                EventDetailActivity::class.java
+                DesignDetailActivity::class.java
             )
             intent.putExtra("Image", designModel.Image)
             intent.putExtra("Phone", designModel.City)
